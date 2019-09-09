@@ -68,7 +68,9 @@ Called by audiencedata_todb.py if the pipeline is configured to do so. Connects 
 Called by audiencedata_todb.py if the pipeline is configured to do so. Connects to the database using the configurations written into the .ini file, drops the tables if they already exist, and creates the new table. First it creates a dummy column, then inserts the columns from the configuration, then deletes the dummy column. It connects to postgres using psycopg2.  
 
 ## Insert rows into postgres (insertrows.py)  
-Called by audiencedata_todb.py. Connects to the database and inserts a row of data into a table, using the configurations written into the .ini file. Any data with coltype = "INTEGER" are converted to floats before being inserted into postgres. Additionally, apostrophes in data are converted to tildas to be properly inserted into postgres. This actually occurs in audiencedata_todb.py prior to calling insertrows.  
+Called by audiencedata_todb.py. Creates an open multithread-compatible connection pool to the database and inserts rows of data into a table in batches of 100000, using the configurations written into the .ini file. Any data with coltype = "INTEGER" are converted to floats before being inserted into postgres. Additionally, apostrophes in data are converted to tildas to be properly inserted into postgres. This actually occurs in audiencedata_todb.py prior to calling insertrows.  
 
---NOTE: Due to a number of exception cases and limited time, I chose to input all data as TEXT and will post-hoc change data to numeric as needed, since there several cases where the column was mostly numeric but sometimes TEXT-based.
+--NOTE: Due to a number of exception cases and limited time, I chose to input all data as TEXT and will post-hoc change data to numeric as needed, since there several cases where the column was mostly numeric but sometimes TEXT-based.  
 
+## Analyses  
+In development...  
