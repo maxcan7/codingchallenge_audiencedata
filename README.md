@@ -75,4 +75,5 @@ Called by audiencedata_todb.py. Creates an open multithread-compatible connectio
 Reasoning: I chose to read the gzipped rows line-by-line to make the pipeline robust to large datasets that might otherwise take up too much memory. I chose to use an open connection pool so that the loading script would not need to constantly connect to and disconnect from the postgres database, which would be slow. It does not currently multi-thread inserts, but is designed in such a way to support that possibility down the line. I chose to batch the data into units of 100,000 rows to make processing faster, as inserting each row individually would take hours, vs. ~2.5minutes on my (slow) machine in these batches, which only took up a very conservative 1.5mb in memory each. Realistically, the data could be batched in much larger sets to minimize speed / memory tradeoff.  
 
 ## Analyses  
-In development...  
+See audiencedata_analyses.ipynb, the jupyter notebook with the
+analyses, figures, and write-ups.
