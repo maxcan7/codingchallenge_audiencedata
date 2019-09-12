@@ -1,0 +1,13 @@
+data/*
+database/__pycache__/*
+.ipynb_checkpoints/*
+instructions.pdf
+audiencedata_config.ini
+configpath.py
+__pycache__/*
+notes.txt
+data_notes.txt
+query_db.py
+analytics_testingcode.py
+tests_and_queries.txt
+analytics.py
