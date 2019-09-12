@@ -76,4 +76,6 @@ Reasoning: I chose to read the gzipped rows line-by-line to make the pipeline ro
 
 ## Analyses  
 See audiencedata_analyses.ipynb, the jupyter notebook with the
-analyses, figures, and write-ups.
+analyses, figures, and write-ups.  
+  
+I'm currently having trouble with the jupyter notebook rendering in github, but you should be able to examine the raw file, or open the notebook if you clone the repo.
